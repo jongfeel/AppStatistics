@@ -5,6 +5,8 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
+using Microsoft.Azure.Mobile;
+
 namespace AppStatistics.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -22,6 +24,8 @@ namespace AppStatistics.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            MobileCenter.Configure("09a2c7f3-cfe1-4bb6-889a-bf3b31d943be");
+
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

@@ -5,6 +5,10 @@ using System.Text;
 
 using Xamarin.Forms;
 
+ using Microsoft.Azure.Mobile;
+ using Microsoft.Azure.Mobile.Analytics;
+ using Microsoft.Azure.Mobile.Crashes;
+
 namespace AppStatistics
 {
     public partial class App : Application
@@ -14,6 +18,8 @@ namespace AppStatistics
             InitializeComponent();
 
             MainPage = new AppStatistics.MainPage();
+
+            MobileCenter.Start(typeof(Analytics), typeof(Crashes));
         }
 
         protected override void OnStart()
